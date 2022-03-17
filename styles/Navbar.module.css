@@ -1,0 +1,91 @@
+/*
+
+*   @author Swapnil Prakash
+
+*/
+
+.mainnav {
+  display: flex;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  padding-left: 21px;
+  align-items: center;
+  border-bottom: 0.2px solid #808080;
+}
+
+.mainnav a {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navMainUl .navExpand {
+  position: absolute;
+  right: 8px;
+}
+
+.mainnav .navMainUl li {
+  font-size: 21px;
+  color: rgb(91 33 182);
+  font-weight: bold;
+}
+
+.mainnav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.mainnav ul li {
+  margin-left: 0.5rem;
+}
+
+.navCollapse {
+  display: block;
+  margin-left: 96px;
+}
+
+.navCollapse ul li {
+  margin-left: 1.5rem;
+}
+
+.navExpand {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  border-radius: 6px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (max-width: 640px) {
+  .mainnav {
+    flex-direction: column;
+  }
+
+  .navCollapse {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    margin-left: 0px;
+    overflow: hidden;
+    height: 0px;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.15s;
+  }
+  .navCollapse ul {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .navCollapse ul li {
+    margin-left: 0rem;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+  .navExpand {
+    display: block;
+  }
+}
