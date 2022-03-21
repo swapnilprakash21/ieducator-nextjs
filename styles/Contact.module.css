@@ -1,0 +1,291 @@
+/*
+
+*   @author Swapnil Prakash
+
+*/
+
+.main {
+  display: flex;
+  justify-content: center;
+  margin-top: 34px;
+  margin-bottom: 34px;
+}
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid rgb(231, 231, 231);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-right: 40px;
+  padding-left: 10px;
+  border-radius: 15px;
+  max-width: 1280px;
+  background-color: rgb(231, 231, 231);
+  box-shadow: 2px 5px 9px #aaaaaa;
+}
+
+.left {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contactDesc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.left * {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.contactImg {
+  height: 300px;
+  width: auto;
+  border-radius: 12px;
+  display: none;
+}
+.right {
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.formInput {
+  border: 1px solid rgb(78, 74, 74);
+  border-radius: 4px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 290px;
+  margin-top: 15px;
+  outline: none;
+  color: #212529;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+textarea.formInput {
+  resize: none;
+}
+.formInput:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.form-control::placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+.submitBtn {
+  border: 1px solid rgb(104, 21, 238);
+  background-color: rgb(5, 119, 212);
+  color: #ffffff;
+  font-weight: bold;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+.submitBtn:disabled {
+  opacity: 0.5;
+}
+.alertDanger {
+  background-color: rgb(127 29 29);
+  color: #fff;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 6px;
+  margin-left: 20px;
+}
+.alertDanger * {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.alertSuccess {
+  background-color: rgb(20 83 45);
+  color: #fff;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 6px;
+  margin-left: 20px;
+}
+.alertSuccess * {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.contactBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (min-width: 640px) {
+  .contactImg {
+    display: block;
+  }
+  .contactForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 560px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .contactBox {
+    display: flex;
+    flex-direction: column;
+  }
+  .formInput {
+    width: 486px;
+  }
+  .left {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contactImg {
+    display: block;
+  }
+  .contactForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 680px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .formInput {
+    width: 486px;
+  }
+  .contactBox {
+    display: flex;
+    flex-direction: column;
+  }
+  .left {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .right {
+    justify-content: left;
+    padding-left: 15px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .contactImg {
+    display: block;
+  }
+  .contactForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .formInput {
+    width: 486px;
+  }
+  .contactBox {
+    display: flex;
+    flex-direction: row;
+  }
+  .left {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .right {
+    justify-content: left;
+    padding-left: 15px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .contactImg {
+    display: block;
+  }
+  .contactForm {
+    display: flex;
+    flex-direction: row;
+    max-width: 1141px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .contactBox {
+    display: flex;
+    flex-direction: row;
+  }
+  .formInput {
+    width: 500px;
+  }
+  .left {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .right {
+    justify-content: left;
+    padding-left: 15px;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .contactImg {
+    display: block;
+  }
+  .contactForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 1219px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .contactBox {
+    display: flex;
+    flex-direction: row;
+    max-width: 1219px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .formInput {
+    width: 530px;
+  }
+  .left {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .right {
+    justify-content: left;
+    padding-left: 15px;
+  }
+}

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React, { Component } from 'react'
 import styles from '../styles/Navbar.module.css'
 export default class Navbar extends Component {
-     dectctWidth = () => {
+    dectctWidth = () => {
         let navCollapse = document.getElementById("navCollapse");
         let mediaQuery = window.matchMedia("(max-width: 640px)");
         if (mediaQuery.matches) {
@@ -15,15 +15,15 @@ export default class Navbar extends Component {
             navCollapse.style.height = 'auto';
             return true;
         }
-    
+
     }
-    
-    componentDidMount(){
+
+    componentDidMount() {
         this.dectctWidth();
         window.addEventListener('resize', this.dectctWidth);
     }
-    
-     toggleCollapse = () => {
+
+    toggleCollapse = () => {
         let navCollapse = document.getElementById("navCollapse");
         if (navCollapse.style.height === '0px') {
             navCollapse.style.display = 'block';
@@ -40,23 +40,21 @@ export default class Navbar extends Component {
             return true;
         }
     }
-  render() {
-    return (
-
-        <nav className={styles.mainnav}>
-        <ul className={styles.navMainUl}>
-            <li>iEducator</li>
-            <button className={styles.navExpand} onClick={this.toggleCollapse}><i className="fas fa-bars    "></i></button>
-        </ul>
-        <div className={styles.navCollapse} id="navCollapse">
-            <ul>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/">Blog</Link></li>
-                <li><Link href="/about">About us</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
-            </ul>
-        </div>
-    </nav>
-    )
-  }
+    render() {
+        return (
+            <nav className={styles.mainnav}>
+                <ul className={styles.navMainUl}>
+                    <li><Link href="/">iEducator</Link></li>
+                    <button className={styles.navExpand} onClick={this.toggleCollapse}><i className="fas fa-bars    "></i></button>
+                </ul>
+                <div className={styles.navCollapse} id="navCollapse">
+                    <ul>
+                        <li><Link href="/">Home</Link></li>
+                        <li><Link href="/about">About us</Link></li>
+                        <li><Link href="/contact">Contact</Link></li>
+                    </ul>
+                </div>
+            </nav>
+        )
+    }
 }

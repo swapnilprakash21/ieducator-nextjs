@@ -11,9 +11,26 @@
   padding-left: 21px;
   align-items: center;
   border-bottom: 0.2px solid #808080;
+  background-color: #fff;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  box-sizing: border-box;
+  z-index: 10;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
-
 .mainnav a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.navMainUl a:active {
+  text-decoration: none;
+  cursor: pointer;
+  color: rgb(91 33 182) !important;
+}
+.navCollapse a {
   color: #000000;
   text-decoration: none;
   cursor: pointer;
@@ -26,7 +43,7 @@
 
 .mainnav .navMainUl li {
   font-size: 21px;
-  color: rgb(91 33 182);
+  color: rgb(91 33 182) !important;
   font-weight: bold;
 }
 
