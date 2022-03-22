@@ -1,0 +1,43 @@
+.selectNone {
+  user-select: none;
+}
+
+.header {
+  background-color: rgb(219 234 254);
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.headerContent {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.content {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  color: rgb(153 27 27);
+}
+
+.fontBold {
+  font-weight: 700;
+}
+
+@media (min-width: 640px) {
+  .headerContent {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 640px) {
+  .content {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+}
