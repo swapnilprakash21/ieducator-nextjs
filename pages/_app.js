@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import NextNProgress from "nextjs-progressbar";
 
 function MyApp({ Component, pageProps }) {
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }) {
     />
     <Navbar />
     <Component {...pageProps} />
+    <Footer/>
   </>
 }
 
