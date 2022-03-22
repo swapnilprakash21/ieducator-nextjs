@@ -48,7 +48,7 @@
   height: 300px;
   width: auto;
   border-radius: 12px;
-  display: none;
+  /* display: none; */
 }
 .right {
   display: flex;

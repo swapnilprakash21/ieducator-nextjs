@@ -40,6 +40,12 @@
   position: absolute;
   right: 8px;
 }
+.navMainUl >li >img {
+  height: 62px;
+  margin-top: -22px;
+  margin-bottom: -22px;
+  margin-left: -20px;
+}
 
 .mainnav .navMainUl li {
   font-size: 21px;
