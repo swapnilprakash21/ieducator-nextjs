@@ -2,17 +2,25 @@ import Link from 'next/link'
 import React, { Component } from 'react'
 import styles from '../styles/Navbar.module.css'
 export default class Navbar extends Component {
+    constructor(){
+        super();
+        this.state = {
+            logoUrl: "/logo/ieducator.png"
+        }
+    }
     dectctWidth = () => {
         let navCollapse = document.getElementById("navCollapse");
         let mediaQuery = window.matchMedia("(max-width: 640px)");
         if (mediaQuery.matches) {
             navCollapse.style.display = 'none';
             navCollapse.style.height = '0px';
+            this.setState({logoUrl: "/logo/logo.png"})
             return true;
         }
         else {
             navCollapse.style.display = 'block';
             navCollapse.style.height = 'auto';
+            this.setState({logoUrl: "/logo/ieducator.png"})
             return true;
         }
 
@@ -28,7 +36,7 @@ export default class Navbar extends Component {
         if (navCollapse.style.height === '0px') {
             navCollapse.style.display = 'block';
             setTimeout(() => {
-                navCollapse.style.height = '85px';
+                navCollapse.style.height = '44px';
             }, 1);
             return true;
         }
@@ -44,7 +52,7 @@ export default class Navbar extends Component {
         return (
             <nav className={styles.mainnav}>
                 <ul className={styles.navMainUl}>
-                    <li><Link href="/">iEducator</Link></li>
+                    <li><Link href="/"><img src={this.state.logoUrl} alt="iEducator"/></Link></li>
                     <button className={styles.navExpand} onClick={this.toggleCollapse}><i className="fas fa-bars    "></i></button>
                 </ul>
                 <div className={styles.navCollapse} id="navCollapse">

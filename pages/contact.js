@@ -22,7 +22,6 @@ export default withRouter(class Contact extends Component {
             formProcessing: false
         }
         this.recaptchaRef = React.createRef();
-
     }
 
     handleSubmit = async (e) => {
@@ -35,8 +34,6 @@ export default withRouter(class Contact extends Component {
                 successMessage: "",
             });
         e.preventDefault();
-        this.recaptchaRef.current.reset();
-        this.setState({ captchaCode: undefined })
         let body = {
             "name": this.state.name,
             "email": this.state.email,
@@ -44,25 +41,31 @@ export default withRouter(class Contact extends Component {
             "message": this.state.message,
             "captcha": this.state.captchaCode
         };
-        let post = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/postContact`, {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
+        try {
+            let post = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/postContact`, {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
 
-            },
-            body: JSON.stringify(body),
-        });
-        let res = await post.json();
-        console.log(res)
-        if (post.status === 400 || post.status === 500) {
+                },
+                body: JSON.stringify(body),
+            });
+            let res = await post.json();
+            if (post.status === 400 || post.status === 500) {
 
-            this.setState({ formSuccess: false, formError: true, errorMessage: res.error })
+                this.setState({ formSuccess: false, formError: true, errorMessage: res.error })
+            }
+            else if (post.status === 200) {
+
+                this.setState({ formError: false, formSuccess: true, successMessage: res.success, name: "", email: "", phone: "", message: "", })
+            }
+        } catch (error) {
+            this.setState({ formSuccess: false, formError: true, errorMessage: "Something went wrong. Please try again." })
         }
-        else if (post.status === 200) {
 
-            this.setState({ formError: false, formSuccess: true, successMessage: res.success, name: "", email: "", phone: "", message: "", })
-        }
         this.props.router.push({ pathname: '/contact', state: { pattern: this.state.formSubmitted } }, undefined, { shallow: true, scroll: true })
+        this.recaptchaRef.current.reset();
+        this.setState({ captchaCode: undefined })
         this.setState({ formProcessing: false });
     }
 
@@ -103,24 +106,24 @@ export default withRouter(class Contact extends Component {
                             this.state.formError &&
                             <div className={styles.alertDanger}>
                                 <i className="fas fa-exclamation-triangle    "></i>
-                                <p>{this.state.errorMessage}</p>
+                                <span>{this.state.errorMessage}</span>
                             </div>
                         }
                         {
                             this.state.formSuccess &&
                             <div className={styles.alertSuccess}>
                                 <strong><i className="fas fa-check-circle    "></i> Success:</strong>
-                                <p>{this.state.successMessage}</p>
+                                <span>{this.state.successMessage}</span>
                             </div>
                         }
                         <div className={styles.contactBox}>
                             <div className={styles.left}>
                                 <h1 style={{ 'fontSize': "3rem" }}>Contact Us</h1>
                                 <div className={styles.contactDesc}>
-                                    <h2>Drop us a message.</h2>
                                     <img src="/img/contact-us.avif" alt="Contact us" className={styles.contactImg} />
+                                    <h2>Let&apos;s talk about everything!</h2>
                                     <p>
-                                        Have doubt or suggestion to make? Feel free to ask anything. If you have any suggestions, please
+                                        Have doubt or suggestion to make? Feel free to ask us anything. If you have any suggestions, please
                                         let
                                         me know. Your suggestions are highly appreciated. I appreciate your time and try hard to reply
                                         to
