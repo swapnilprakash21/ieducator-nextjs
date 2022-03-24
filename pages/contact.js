@@ -42,6 +42,7 @@ export default withRouter(class Contact extends Component {
             "captcha": this.state.captchaCode
         };
         try {
+            // Submitting the request (contact form) to the server
             let post = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/postContact`, {
                 method: 'POST',
                 headers: {
@@ -52,20 +53,24 @@ export default withRouter(class Contact extends Component {
             });
             let res = await post.json();
             if (post.status === 400 || post.status === 500) {
-
+                // Server was unable to proceed with the request and has returned an error
                 this.setState({ formSuccess: false, formError: true, errorMessage: res.error })
             }
             else if (post.status === 200) {
-
+                // Server has successfully processed the request
                 this.setState({ formError: false, formSuccess: true, successMessage: res.success, name: "", email: "", phone: "", message: "", })
             }
         } catch (error) {
+            // Could not communicate with the server due to some error
             this.setState({ formSuccess: false, formError: true, errorMessage: "Something went wrong. Please try again." })
         }
 
         this.props.router.push({ pathname: '/contact', state: { pattern: this.state.formSubmitted } }, undefined, { shallow: true, scroll: true })
+        // Resetting the captcha
         this.recaptchaRef.current.reset();
         this.setState({ captchaCode: undefined })
+
+
         this.setState({ formProcessing: false });
     }
 

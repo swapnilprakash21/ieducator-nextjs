@@ -1,0 +1,232 @@
+/*
+
+*   @author Swapnil Prakash
+
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
+
+.header {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 4vh;
+  font-weight: 100;
+  box-sizing: border-box;
+}
+
+.header img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 10;
+}
+
+.headerContent {
+  height: 100%;
+  color: #000000;
+  z-index: 100;
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
+}
+.headerTitle {
+  font-size: 2rem;
+}
+.headerLogo {
+  height: 73px;
+  background-color: #fff;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background-image: url("/logo/ieducator.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.headerContent * {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: "Fira Sans", sans-serif;
+}
+.probDescContainerMain {
+  width: 100%;
+  background-image: url("/img/education-bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.probDescContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.problemImage {
+  height: 500px;
+  width: 100%;
+  padding-top: 50px;
+  box-sizing: border-box;
+}
+.right {
+  padding-left: 20px;
+  margin-top: 10px;
+  padding-right: 20px;
+}
+.problemDesc {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.solBox {
+  width: 100%;
+}
+
+.sol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #0d142d;
+  color: #fff;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.sol > div > h1 {
+  font-size: 2.5rem;
+}
+.solContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: -45px;
+}
+.solutionCard {
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 20px;
+  padding-top: 0;
+  padding-bottom: 40px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 100px;
+  width: 340px;
+  height: 563px;
+  box-shadow: 0 4px 8px 0 #ccc, 0 6px 20px 0 #eee;
+}
+.solImgContainer,
+.solImg {
+  height: 300px;
+  width: 100%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.solContent {
+  padding-left: 18px;
+  padding-right: 18px;
+  margin-top: 20px;
+}
+
+.conclusionBox {
+  border-width: 4px;
+  border-color: rgb(234 88 12);
+  border-style: double;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.container {
+  margin: 45px auto;
+  max-width: 73vw;
+}
+
+@media (min-width: 640px) {
+  .solutionCard {
+    width: 467px;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  .container {
+    margin: 45px auto;
+    max-width: 78vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .solutionCard {
+    width: 476px;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .solutionCard {
+    width: 467px;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  .right {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .solutionCard {
+    width: 500px;
+    height: 500px;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  .probDescContainer {
+    min-width: 1200px;
+    width: 1200px;
+    flex-direction: row;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .problemImage {
+    width: 440px;
+    height: 500px;
+  }
+  .headerTitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .headerTitle {
+    font-size: 3rem;
+  }
+}
