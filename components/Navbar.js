@@ -4,23 +4,21 @@ import styles from '../styles/Navbar.module.css'
 export default class Navbar extends Component {
     constructor() {
         super();
-        this.collapseState = React.createRef()
+        this.collapseState = React.createRef();;
     }
     dectctWidth = () => {
         let mediaQuery = window.matchMedia("(max-width: 640px)");
         if (mediaQuery.matches) {
-            this.collapseState.current.classList.add(styles.navCollapsed)
+            this.collapseState.current.classList.add(styles.navCollapsed);;
         }
         else {
             if (this.collapseState.current.classList.contains(styles.navCollapsed)) {
-                this.collapseState.current.classList.remove(styles.navCollapsed)
+                this.collapseState.current.classList.remove(styles.navCollapsed);;
             }
             else if (this.collapseState.current.classList.contains(styles.navExpanded)) {
-                this.collapseState.current.classList.remove(styles.navExpanded)
+                this.collapseState.current.classList.remove(styles.navExpanded);;
             }
-            return true;
         }
-
     }
 
     componentDidMount() {
@@ -29,17 +27,13 @@ export default class Navbar extends Component {
     }
 
     toggleCollapse = () => {
-        console.log(this.collapseState.current.classList);
         if (this.collapseState.current.classList.contains(styles.navCollapsed)) {
-
-            this.collapseState.current.classList.remove(styles.navCollapsed)
-            this.collapseState.current.classList.add(styles.navExpanded)
-
-            return true;
+            this.collapseState.current.classList.remove(styles.navCollapsed);
+            this.collapseState.current.classList.add(styles.navExpanded);
         }
         else {
-            this.collapseState.current.classList.add(styles.navCollapsed)
-            this.collapseState.current.classList.remove(styles.navExpanded)
+            this.collapseState.current.classList.add(styles.navCollapsed);
+            this.collapseState.current.classList.remove(styles.navExpanded);
         }
     }
     render() {
