@@ -82,15 +82,18 @@
   cursor: pointer;
   display: none;
 }
-
+.navExpanded{
+  height: 76px !important;
+}
+.navCollapsed{
+  height: 0px !important;
+}
 @media screen and (max-width: 640px) {
   .mainnav {
     flex-direction: column;
   }
 
   .navCollapse {
-    padding-top: 1rem;
-    padding-bottom: 2rem;
     margin-left: 0px;
     overflow: hidden;
     height: 0px;

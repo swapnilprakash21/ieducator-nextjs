@@ -2,16 +2,22 @@ import Link from 'next/link'
 import React, { Component } from 'react'
 import styles from '../styles/Navbar.module.css'
 export default class Navbar extends Component {
+    constructor() {
+        super();
+        this.collapseState = React.createRef()
+    }
     dectctWidth = () => {
-        let navCollapse = document.getElementById("navCollapse");
         let mediaQuery = window.matchMedia("(max-width: 640px)");
         if (mediaQuery.matches) {
-            navCollapse.style.display = 'none';
-            navCollapse.style.height = '0px';
+            this.collapseState.current.classList.add(styles.navCollapsed)
         }
         else {
-            navCollapse.style.display = 'block';
-            navCollapse.style.height = 'auto';
+            if (this.collapseState.current.classList.contains(styles.navCollapsed)) {
+                this.collapseState.current.classList.remove(styles.navCollapsed)
+            }
+            else if (this.collapseState.current.classList.contains(styles.navExpanded)) {
+                this.collapseState.current.classList.remove(styles.navExpanded)
+            }
             return true;
         }
 
@@ -23,20 +29,17 @@ export default class Navbar extends Component {
     }
 
     toggleCollapse = () => {
-        let navCollapse = document.getElementById("navCollapse");
-        if (navCollapse.style.height === '0px') {
-            navCollapse.style.display = 'block';
-            setTimeout(() => {
-                navCollapse.style.height = '44px';
-            }, 1);
+        console.log(this.collapseState.current.classList);
+        if (this.collapseState.current.classList.contains(styles.navCollapsed)) {
+
+            this.collapseState.current.classList.remove(styles.navCollapsed)
+            this.collapseState.current.classList.add(styles.navExpanded)
+
             return true;
         }
         else {
-            navCollapse.style.height = '0px';
-            setTimeout(() => {
-                navCollapse.style.display = 'none';
-            }, 150);
-            return true;
+            this.collapseState.current.classList.add(styles.navCollapsed)
+            this.collapseState.current.classList.remove(styles.navExpanded)
         }
     }
     render() {
@@ -46,7 +49,7 @@ export default class Navbar extends Component {
                     <li><Link href="/"><img src='/logo/ieducator.png' alt="iEducator" /></Link></li>
                     <button className={styles.navExpand} onClick={this.toggleCollapse}><i className="fas fa-bars    "></i></button>
                 </ul>
-                <div className={styles.navCollapse} id="navCollapse">
+                <div className={styles.navCollapse} ref={this.collapseState}>
                     <ul>
                         <li><Link href="/">Home</Link></li>
                         <li><Link href="/about">About us</Link></li>
