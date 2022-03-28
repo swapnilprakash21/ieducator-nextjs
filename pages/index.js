@@ -19,7 +19,7 @@ export default class Index extends Component {
                     <div className={styles.header}>
 
                         <div>
-                            <img src="https://smithsystem.com/smithfiles/wp-content/uploads/sites/2/2021/07/lifestyle_student-classroom-1024x683.jpg" alt="" id="slide" />
+                            <img src="/img/studentClassroom.jpg" alt="" id="slide" />
                             <div className={styles.headerContent}>
                                 <div className={styles.headerLogo}></div>
                                 <h1 className={styles.headerTitle}>Innovative Solutions For Making Education <span style={{ 'color': '#0dcaf0' }}><Typed strings={['Accessible For All', 'A Reality For All Citizens', 'A Holistic Experience',]} typeSpeed={40} backSpeed={50} loop></Typed></span></h1>
