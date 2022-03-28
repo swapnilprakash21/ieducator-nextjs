@@ -13,7 +13,7 @@ export default class Index extends Component {
         return (
             <>
                 <Head>
-                    <title>Home - iEducator</title>
+                    <title>iEducator - Making Education a Reality For All</title>
                 </Head>
                 <div>
                     <div className={styles.header}>
