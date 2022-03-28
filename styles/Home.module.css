@@ -5,7 +5,7 @@
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap");
 .header {
   min-height: 100vh;
   width: 100%;
@@ -84,7 +84,7 @@
   width: 100%;
 }
 .problemImage {
-  height: 500px;
+  height: 378px;
   width: 100%;
   padding-top: 50px;
   box-sizing: border-box;
@@ -136,6 +136,10 @@
   height: 563px;
   box-shadow: 0 4px 8px 0 #ccc, 0 6px 20px 0 #eee;
 }
+
+.solContent h2 {
+  padding-bottom: 10px;
+}
 .solImgContainer,
 .solImg {
   height: 300px;
@@ -164,6 +168,31 @@
   max-width: 73vw;
 }
 
+.sdgBox {
+  background-color: rgb(67, 155, 255);
+  color: #fff;
+  padding-bottom: 20px;
+}
+.sdgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sdgContainer * {
+  font-family: "PT Sans Caption", sans-serif;
+}
+.sdgLink {
+  color: rgb(24 24 24);
+  text-decoration: none;
+}
+.sdgLink:hover {
+  text-decoration: underline;
+}
+.sdgImg {
+  height: 107px;
+  width: 100%;
+}
 @media (min-width: 640px) {
   .solutionCard {
     width: 467px;
@@ -174,6 +203,12 @@
     margin: 45px auto;
     max-width: 78vw;
   }
+  .sdgImg {
+    height: 132px;
+  }
+  .problemImage {
+    height: 482px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -181,6 +216,9 @@
     width: 476px;
     margin-left: 25px;
     margin-right: 25px;
+  }
+  .sdgImg {
+    height: 159px;
   }
 }
 
@@ -216,16 +254,23 @@
     justify-content: center;
   }
   .problemImage {
-    width: 440px;
-    height: 500px;
+    width: 417px;
+    height: 466px;
+    padding-bottom: 29px;
   }
   .headerTitle {
     font-size: 2.5rem;
+  }
+  .sdgImg {
+    height: 202px;
   }
 }
 
 @media (min-width: 1536px) {
   .headerTitle {
     font-size: 3rem;
+  }
+  .sdgImg {
+    height: 260px;
   }
 }
